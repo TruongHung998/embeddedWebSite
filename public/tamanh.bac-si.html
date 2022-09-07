@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="icon" href="/favicon-ta.ico">
+    <link rel="stylesheet" href="/resets.css" />
+    <title>Bác sĩ - Tâm Anh</title>
+    <script src="/js/embed.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="ta-booking-bacsi"></div>
+    </div>
+    
+    <script>
+      embedForm(
+        document.getElementById('ta-booking-bacsi'),
+        'ta-booking',
+        {
+          source: 'demo',
+          extras: {
+            layout: 'doctor',
+            center: 'ha-noi',
+            doctor: 16260,
+            speciality: 72
+          }
+        }
+      )
+    </script>
+  </body>
+</html>

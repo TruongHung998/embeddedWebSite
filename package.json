@@ -1,0 +1,58 @@
+{
+  "name": "embed-forms",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "postbuild": "cp dist/js/embed.*.js dist/js/embed.js",
+    "lint": "vue-cli-service lint",
+    "build:elements": "./node_modules/.bin/node-sass --importer node_modules/node-sass-import --output-style compressed src/assets/elements.scss > src/assets/elements.css",
+    "deploy:staging": "BUILD_MODE=staging yarn build && firebase deploy"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.6",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "node-sass": "4.13",
+    "node-sass-import": "^2.0.1",
+    "numeral": "^2.0.6",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "qs": "^6.10.1",
+    "sass-loader": "8.0.2",
+    "vue": "^2.6.11",
+    "vue-qrcode-component": "^2.1.1",
+    "vue-svg-inline-loader": "^2.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

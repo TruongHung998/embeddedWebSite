@@ -1,0 +1,371 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <title>Chương trình học đường</title>
+    <style>body, html {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        background: white;
+        margin: 0;
+        padding: 0
+    }
+
+    * {
+        word-break: break-word;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent
+    }
+
+    a {
+        text-decoration: none
+    }
+
+    .ep-content-wrapper {
+        padding: 1.5rem 0
+    }
+
+    .ep-container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 8px
+    }
+
+    @media only screen and (min-width: 768px) {
+        .ep-container {
+            padding: 0 1rem
+        }
+    }
+
+    .common-header__banner {
+        display: block;
+        background-image: url(/chuyen-muc-covid-19.jpg);
+        background-repeat: no-repeat;
+        background-size: 940px;
+        background-position: center right -190px;
+        height: 72px
+    }
+
+    @media only screen and (min-width: 768px) {
+        .common-header__banner {
+            background-size: 140%;
+            background-position: center;
+            height: 80px
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        .common-header__banner {
+            background-size: 120%;
+            height: 96px
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .common-header__banner {
+            background-size: 100%;
+            height: 7vw
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        .common-header__container {
+            padding: 0 8px 0 0
+        }
+    }
+
+    .common-header__layout {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 0.3rem 0
+    }
+
+    @media only screen and (max-width: 767px) {
+        .common-header__logo {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1
+        }
+    }
+
+    .common-header__logo img {
+        height: 60px
+    }
+
+    @media only screen and (max-width: 767px) {
+        .common-header__logo img {
+            height: 50px
+        }
+    }
+
+    .common-header__menu {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        text-transform: uppercase;
+        margin-right: 10px
+    }
+
+    @media only screen and (max-width: 767px) {
+        .common-header__menu {
+            display: none
+        }
+    }
+
+    .common-header__menu > a {
+        text-decoration: none;
+        color: #2a388f;
+        font-weight: bold;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 12px;
+        margin-right: 14px
+    }
+
+    .common-header__menu > a > img {
+        height: 20px
+    }
+
+    .common-header__menu > a > span {
+        margin-left: 3px
+    }
+
+    .common-header__hotline {
+        color: #FF7400;
+        font-weight: bold;
+        text-decoration: none;
+        margin-right: 10px;
+        font-size: 16px
+    }
+
+    @media only screen and (min-width: 992px) {
+        .common-header__hotline {
+            font-size: 18px
+        }
+    }
+
+    .common-header__working-time {
+        font-size: 10px;
+        font-weight: bold;
+        margin-top: 0.2em;
+        color: #2a388f
+    }
+
+    .common-header__cart {
+        width: 52px;
+        position: relative;
+        cursor: pointer;
+        text-align: center
+    }
+
+    .common-header__cart-icon {
+        font-size: 1.5em;
+        color: #1f28af
+    }
+
+    .common-header__cart-counter {
+        position: absolute;
+        background: #e5285d;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0.1em 0.4em;
+        border-radius: 6px;
+        bottom: -4px;
+        right: 4px
+    }
+
+    .common-footer {
+        background: #2a388f;
+        color: white;
+        font-size: 12px;
+        line-height: 1.5em;
+        padding: 2rem 0 1rem
+    }
+
+    .common-footer__about {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        padding-top: 1rem;
+        margin-top: 1rem
+    }
+
+    .common-footer__link {
+        font-weight: bold;
+        color: white;
+        text-decoration: none
+    }
+
+    .common-footer__certifications {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .common-footer__certifications > * {
+        display: block
+    }
+
+    .common-footer__certifications > :not(:last-child) {
+        margin-right: 1.5em
+    }
+
+    @media only screen and (max-width: 991px) {
+        .common-footer__copyrights {
+            margin-top: 1em
+        }
+    }
+
+    .common-footer .centers {
+        font-size: 16px;
+        display: -ms-grid;
+        display: grid;
+        grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+        grid-gap: 1.5em 0
+    }
+
+    .common-footer .centers__item-title {
+        font-weight: bold
+    }
+
+    .common-footer .centers__item-children {
+        max-width: 280px;
+        margin-top: 1em;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1em 1fr;
+        grid-template-columns:1fr 1fr;
+        grid-gap: 0.5em 1em
+    }
+
+    .common-footer .centers__item-children a {
+        color: white;
+        font-size: 14px;
+        text-decoration: none
+    }</style>
+</head>
+<body>
+<section class="common-header">
+    <div class="ep-container common-header__container">
+        <div class="common-header__layout">
+            <div class="common-header__logo"><a href="#"><img
+                    src="https://vnvc.vn/wp-content/uploads/2021/01/logo-02.png"/></a></div>
+            <div class="common-header__menu"><a href="https://vnvc.vn">Trang chủ VNVC</a></div>
+            <div class="common-header__contact"><a class="common-header__hotline" href="tel:02873006595"><span
+                    class="hidden-sm-and-down">Hotline:&nbsp;</span><span>028 7300 6595</span></a>
+                <div class="common-header__working-time">Mở cửa 7h30-17h00/T2-CN xuyên trưa</div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="ep-content-wrapper">
+    <div class="ep-container">
+        <script src="https://app.e-plus.vn/form/js/embed.js?v=5" id="eplus-form-embed" data-source="website"
+                data-home="" data-next="" data-form="school-program-voucher-result"></script>
+    </div>
+</div>
+<section class="common-footer">
+    <div class="ep-container">
+        <div class="common-footer__centers">
+            <div class="centers">
+                <div class="centers__item">
+                    <div class="centers__item-title">Hệ thống Miền Bắc</div>
+                    <div class="centers__item-children"><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=bac-giang">Bắc Giang</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=bac-ninh">Bắc Ninh</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=ha-noi">Hà Nội</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=nam-dinh">Nam Định</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=ninh-binh">Ninh Bình</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=phu-tho">Phú Thọ</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=quang-ninh">Quảng Ninh</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=thai-nguyen">Thái Nguyên</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=vinh-phuc">Vĩnh Phúc</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=hung-yen">Hưng Yên</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=hai-phong">Hải Phòng</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=yen-bai">Yên Bái</a></div>
+                </div>
+                <div class="centers__item">
+                    <div class="centers__item-title">Hệ thống Miền Trung</div>
+                    <div class="centers__item-children"><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=dak-lak">Đắk Lắk</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=gia-lai">Gia Lai</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=da-nang">Đà Nẵng</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=khanh-hoa">Khánh Hòa</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=quang-ngai">Quảng Ngãi</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=quang-nam">Quảng Nam</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=quy-nhon">Bình Định</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=thua-thien-hue">Thừa Thiên
+                        Huế</a><a href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=nghe-an">Nghệ An</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=thanh-hoa">Thanh Hóa</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=ha-tinh">Hà Tĩnh</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=dong-hoi">Đồng Hới</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=duc-trong">Đức Trọng</a></div>
+                </div>
+                <div class="centers__item">
+                    <div class="centers__item-title">Hệ thống Miền Nam</div>
+                    <div class="centers__item-children"><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=an-giang">An Giang</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=binh-duong">Bình Dương</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=can-tho">Cần Thơ</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=dong-nai">Đồng Nai</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=kien-giang">Kiên Giang</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=long-an">Long An</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=tien-giang">Tiền Giang</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=ho-chi-minh">Hồ Chí Minh</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=ben-tre">Bến Tre</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=vinh-long">Vĩnh Long</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=ca-mau">Cà Mau</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=binh-phuoc">Bình Phước</a><a
+                            href="https://vnvc.vn/he-thong-trung-tam-tiem-chung/?province=ba-ria-vung-tau">Bà Rịa – Vũng
+                        Tàu</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="common-footer__about">
+            <div class="el-row">
+                <div class="common-footer__company el-col el-col-24 el-col-md-16">
+                    <div><strong>Công ty Cổ phần Vacxin Việt Nam</strong><br/>Giấy chứng nhận ĐKKD số 0107631488 do sở
+                        Kế hoạch và Đầu tư TP. Hà Nội cấp ngày 11/11/2016<br/>Địa chỉ: 180 Trường Chinh, P. Khương
+                        Thượng, Q. Đống Đa,Tp. Hà Nội<br/>Mail: cskh@vnvc.vn
+                    </div>
+                </div>
+                <div class="common-footer__copyrights el-col el-col-24 el-col-md-8">
+                    <div><a class="common-footer__link" href="https://vnvc.vn/chinh-sach-bao-mat-thong-tin/">CHÍNH SÁCH
+                        BẢO MẬT</a><br/>Bản quyền © 2016 thuộc về CÔNG TY CỔ PHẦN VACXIN VIỆT NAM
+                        <div class="common-footer__certifications"><a
+                                href="https://www.dmca.com/Protection/Status.aspx?ID=ce267d6f-3c89-482c-b52d-d9a2c36ef544&amp;refurl=https://vnvc.vn/"
+                                target="_blank"><img
+                                src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-10.png?ID=ce267d6f-3c89-482c-b52d-d9a2c36ef544"
+                                width="110px"/></a><a
+                                href="http://www.online.gov.vn/CustomWebsiteDisplay.aspx?DocId=47914"
+                                target="_blank"><img src="https://vnvc.vn/img/dathongbao.png" width="110px"/></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

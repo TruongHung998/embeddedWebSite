@@ -1,0 +1,282 @@
+@import url('https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css');
+
+$--font-size: 11px;
+
+@mixin customInput {
+  .ep-radio {
+    margin: .5rem 0;
+  }
+
+  .ep-button {
+    background: #F39021;
+    color: #FFF;
+    width: 25%;
+    height: 50px;
+    font-size: 18px;
+    align-self: center;
+    margin: 0.5rem 0;
+  }
+
+  .ep-button.disabled-button {
+    cursor: no-drop;
+    background: #F7F8FB;
+    border: 1px solid #E6E8EF;
+    color: #B9BFD3;
+  }
+
+  @media only screen and (max-width: 576px) {
+    .ep-button {
+      font-size: 12px;
+      padding: 12px !important;
+    }
+  }
+
+  .ep-input {
+    position: relative;
+    width: 95%;
+    margin: 1.5rem 0;
+
+    &__input {
+      //width: 85%;
+      height: 30px;
+      padding-top: 1.5rem;
+      //padding-right: 18%;
+      width: 63%;
+      padding-right: 40%;
+      border-radius: 8px;
+      padding-left: 0.8rem;
+      color: #202332;
+      font-weight: 700;
+      border: 1px rgba(42, 56, 143, 0.2) solid;
+      @media only screen and (max-width: 576px) {
+        font-size: $--font-size;
+      }
+    }
+
+    &__input.otp-input {
+      width: 63%;
+      padding-right: 40%;
+    }
+
+    &__input.code-input {
+      width: 100%;
+      padding-right: 2%;
+    }
+
+    &__input:focus {
+      outline: none !important;
+    }
+
+    &__input:focus ~ .ep-input__sub-placeholder {
+      display: none;
+    }
+
+    &__input:focus ~ .ep-input__main-placeholder {
+      display: block;
+    }
+
+    &__button {
+      cursor: pointer;
+      top: 35%;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      color: #2A388F;
+      font-weight: 700;
+      @media only screen and (max-width: 576px) {
+        font-size: $--font-size;
+      }
+    }
+
+    &__resubmitotp {
+      cursor: pointer;
+      color: #2A388F;
+      font-weight: 700;
+      align-self: center;
+      margin-bottom: 1rem;
+    }
+
+    &__error-message {
+      top: 5%;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      color: #EB5757;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 45%;
+
+      .message {
+        padding-bottom: 2px;
+        @media only screen and (max-width: 576px) {
+          font-size: $--font-size;
+        }
+      }
+    }
+
+    &__time-message {
+      top: 5%;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      color: #EB5757;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      width: 12%;
+      @media only screen and (max-width: 576px) {
+        font-size: $--font-size;
+      }
+    }
+
+    &__placeholder {
+      top: 0.5rem;
+      left: 1rem;
+      color: #A8AEC7;
+      position: absolute;
+      font-weight: 300;
+    }
+
+    &__main-placeholder {
+      top: 0.5rem;
+      left: 1rem;
+      color: #A8AEC7;
+      position: absolute;
+      font-weight: 300;
+      display: none;
+      @media only screen and (max-width: 576px) {
+        font-size: $--font-size;
+      }
+    }
+
+    &__main-placeholder-notempty {
+      top: 0.5rem;
+      left: 1rem;
+      color: #A8AEC7;
+      position: absolute;
+      font-weight: 300;
+      display: block;
+      @media only screen and (max-width: 576px) {
+        font-size: $--font-size;
+      }
+    }
+
+    &__sub-placeholder {
+      display: block;
+      top: 35%;
+      left: 1rem;
+      color: #A8AEC7;
+      position: absolute;
+      font-weight: 400;
+      font-size: 1rem;
+      @media only screen and (max-width: 576px) {
+        font-size: $--font-size;
+      }
+    }
+
+    .force-input {
+      border: 1px #EB5757 solid;
+    }
+
+    .force-input-text {
+      color: #EB5757;
+    }
+
+    .disabled {
+      cursor: no-drop;
+      background: #F7F8FB;
+      border: 1px solid #E6E8EF;
+    }
+  }
+}
+
+.vnvc-membership {
+  .vnvc-frame {
+    &__content {
+      font-size: 14px;
+      padding: 12px 16px;
+      background: #FFF;
+      color: white;
+      box-shadow: 0px 4px 20px rgba(42, 56, 143, 0.2);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      @include customInput
+    }
+
+    &__header {
+      background: #2A388F;
+      color: white;
+      padding: 12px 16px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      &-title {
+        color: white;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .vnvc-dialog {
+    @include customInput
+    .el-dialog {
+      width: 95%;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 5px;
+
+      &__close {
+        color: white;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      &__header {
+        background: #2A388F;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      &__title {
+        text-transform: uppercase;
+        color: white;
+        font-size: 14px;
+      }
+
+      &__body {
+        background: #FFF;
+        color: white;
+        word-break: break-word;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      .wrap-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .title {
+          color: #697288;
+          width: 75%;
+          text-align: center;
+          font-weight: 600;
+        }
+      }
+      .ep-input__input.otp-input {
+        width: 59%;
+      }
+    }
+  }
+}
